@@ -54,7 +54,72 @@ dell'importanza del testo nel Web.</p> </div>
       </div>
       
       
+     <script type="text/javascript">
+              
+     
+              
+            $(document).ready(function() {
+              
+              var SDK=lpTag.agentSDK;
+              SDK.init();
+              
+              
+                setTimeout(function(){ //gestione IdP
+                       var options = {packages: ['corechart'], callback : myCallback};
+                       google.load('visualization', '1', options);
+                       function callback() {
+                       }
+                       function myCallback() {
+                                setTimeout(function(){ 
+                                                      var token = localStorage.getItem('token');
+                                                      if (token) {
+        
+                          
+                                                                   var data = JSON.parse(localStorage.getItem('profile'));
+                                                                   var identificativo = data.user_id;
+                                                                   var String = 'SELECT A, B, C, D, E, F WHERE A=' + "'"+ identificativo + "'";
+                                                                   var queryString = encodeURIComponent(String);        
+                                                                   var myURL = 'https://docs.google.com/spreadsheets/d/1-bGbupGHbTfYv0aNEchYzU2dvIPTWiYGNaF427AO9oI/gviz/tq?gid=342369015&tq=' + queryString;
+                                                                   var query = new google.visualization.Query(myURL);
+                                                                   query.send(handleQueryResponse);
+                                                                   function handleQueryResponse(response) {
+                                                                                                           if (response.isError()) {
+                                                                                                                                    alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                                                                                                                                    return;
+                                                                                                                                    }
+                                                                                                           var data = response.getDataTable();
+                                                                                                           var auth_id = data.getValue(0, 0);
+                                                                                                           var auth_name = data.getValue(0, 1);
+                                                                                                           var auth_phone = data.getValue(0, 2);
+                                                                                                           var auth_email = data.getValue(0, 3);
+                                                                                                           var auth_picture = data.getValue(0, 4);
+                                          alert(auth_picture);
+                                                                                                           var auth_balance = data.getValue(0, 5);
+                                                                                                           document.getElementById("picture").style.backgroundImage = 'url('+auth_picture+')';
+                                                                                                           document.getElementById("Auth_Name").innerHTML = auth_name;
+                                                                                                           document.getElementById("Auth_Phone").innerHTML = auth_phone;
+                                                                                                           document.getElementById("Auth_Email").innerHTML = auth_email;
+                                                                                                           document.getElementById("Auth_Balance").innerHTML = auth_balance;
+                                                                                                           document.getElementById("scrittatitolo").style.color = "white";
+                                                                                                           document.getElementById("scrittatitolo").innerHTML = "Visitatore Autenticato";
+                                                                                                           document.getElementById("contenitore").style.backgroundColor = "green";
+                                                                                                           }
+                                                                    
+                                                                    }
+                                                                else{
+                                                                  
+                                                                    }
+                                                                     
       
+                                                	}, 3000);
+                                         }
+	               }, 3000);
+              
+              
+           });
+  
+        
+      </script>    
       
       
       
