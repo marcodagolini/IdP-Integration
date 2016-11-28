@@ -81,8 +81,8 @@ dell'importanza del testo nel Web.</p> </div>
 					              var onError = function(err) {
   					               // Do something with the error
 					              };
-					              var pathToData = "SDE.customerDetails[0].customerId";
-					              lpTag.agentSDK.get(pathToData, onSuccess, onError);
+					              
+					              lpTag.agentSDK.get('SDE.customerDetails[0].customerId', onSuccess, onError);
 					
 					
 					
