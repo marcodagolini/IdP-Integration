@@ -127,7 +127,8 @@ dell'importanza del testo nel Web.</p> </div>
   					                    document.getElementById("scrittatitolo").innerHTML = "Visitatore Autenticato";
 					              };
 					              
-					              lpTag.agentSDK.get('visitorInfo.visitorName', onSuccess, onError);
+					             var pathToData = "visitorInfo.visitorName";
+                                                     lpTag.agentSDK.get(pathToData, onSuccess, onError);
                                                                      
       
                                                 	}, 3000);
