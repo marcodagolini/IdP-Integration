@@ -70,8 +70,8 @@ Email: mdagolini@liveperson.com
       		             
                                                var onSuccess = function(givemearesult) {
 				
-							var tokenstored = givemearesult.customerDetails[0].customerId;
-						       alert(tokenstored);
+					              var tokenstored = givemearesult.customerDetails[0].customerId;
+						      alert(tokenstored);
 
 		   
                                                       if (tokenstored == "unknown") {
@@ -140,18 +140,15 @@ Email: mdagolini@liveperson.com
 						                                                       };
 						               }
 						      };
-					         var onError = function(err) {
-  					               alert("error");
-					         };
-					         var pathToData = "SDE";
-					         lpTag.agentSDK.get(pathToData, onSuccess, onError);
+					              var onError = function(err) {
+  					                    alert("error");
+					              };
+					              var pathToData = "SDE";
+					              lpTag.agentSDK.get(pathToData, onSuccess, onError);
 					             
-					            // var pathToData = "visitorInfo.visitorName";
-                                                    // lpTag.agentSDK.get(pathToData, onSuccess, onError);
+					              // var pathToData = "visitorInfo.visitorName";
+                                                      // lpTag.agentSDK.get(pathToData, onSuccess, onError);
 							
-						      
-						      
-						      };
 					
    
                                                }, 10000);
