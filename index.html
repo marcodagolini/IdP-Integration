@@ -55,7 +55,7 @@ Email: mdagolini@liveperson.com
       
      <script type="text/javascript">
               
-            var url_unknow = 'https://i.imgur.com/AxboLNf.jpg'
+            var url_unknow = 'https://i.imgur.com/AxboLNf.jpg';
             $(document).ready(function() {
               
                        var SDK=lpTag.agentSDK;
@@ -63,10 +63,8 @@ Email: mdagolini@liveperson.com
               
       
                 setTimeout(function(){ //gestione IdP
-                       var options = {packages: ['corechart'], callback : myCallback};
-                       google.load('visualization', '1', options);
-                       function callback() {
-                       };
+                       
+                       
                        function myCallback() {
                                 setInterval(function(){ 
                                                      
@@ -168,7 +166,12 @@ Email: mdagolini@liveperson.com
    
                                                }, 10000);
                                          };
-	               }, 3000);
+	              
+		    
+		           var options = {packages: ['corechart'], "callback" : myCallback};
+                           google.load('visualization', '1', options);
+			
+	         }, 3000);
               
               
            });
