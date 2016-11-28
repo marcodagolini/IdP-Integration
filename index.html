@@ -63,7 +63,7 @@ dell'importanza del testo nel Web.</p> </div>
               // var SDK=lpTag.agentSDK;
               // SDK.init();
               
-              
+      alert ("1");        
                 setTimeout(function(){ //gestione IdP
                        var options = {packages: ['corechart'], callback : myCallback};
                        google.load('visualization', '1', options);
@@ -72,6 +72,7 @@ dell'importanza del testo nel Web.</p> </div>
                        function myCallback() {
                                 setTimeout(function(){ 
                                                       var token = localStorage.getItem('token');
+					      alert ("2");   
                                                       if (token) {
         
                           
