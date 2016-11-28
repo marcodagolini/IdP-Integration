@@ -58,7 +58,7 @@ Email: mdagolini@liveperson.com
       
      <script type="text/javascript">
               
-     
+       var url_unknow = 'https://i.imgur.com/AxboLNf.jpg'
               
        //     $(document).ready(function() {
               
@@ -112,9 +112,10 @@ Email: mdagolini@liveperson.com
 						      }
 					              else {
 							      
-							           var data = JSON.parse(localStorage.getItem('profile'));
-                                                                   var identificativo = data.user_id;
-                                                                   var String = 'SELECT A, B, C, D, E, F WHERE A=' + "'"+ identificativo + "'";
+							           // var data = JSON.parse(localStorage.getItem('profile'));
+                                                                   // var identificativo = data.user_id;
+                                                                   // var String = 'SELECT A, B, C, D, E, F WHERE A=' + "'"+ identificativo + "'";
+							           var String = 'SELECT A, B, C, D, E, F WHERE A=' + "'"+ tokenstored + "'";
                                                                    var queryString = encodeURIComponent(String);        
                                                                    var myURL = 'https://docs.google.com/spreadsheets/d/1-bGbupGHbTfYv0aNEchYzU2dvIPTWiYGNaF427AO9oI/gviz/tq?gid=342369015&tq=' + queryString;
                                                                    var query = new google.visualization.Query(myURL);
@@ -136,6 +137,28 @@ Email: mdagolini@liveperson.com
                                                                                                                                      document.getElementById("scrittatitolo").style.color = "red";
                                                                                                                                
                                                                                                                                                }
+									                                   else{                                                                                                                
+                                                                                                           var auth_id = data.getValue(0, 0);
+                                                                                                           var auth_name = data.getValue(0, 1);
+                                                                                                           var auth_phone = data.getValue(0, 2);
+                                                                                                           var auth_email = data.getValue(0, 3);
+                                                                                                           var auth_picture = data.getValue(0, 4);
+                                 
+
+                                                                                                           var auth_balance = data.getValue(0, 5);
+                                                                                                           document.getElementById("picture").style.backgroundImage = 'url('+auth_picture+')';
+                                                                                                           document.getElementById("Auth_Name").innerHTML = 'Name: ' + auth_name;
+                                                                                                           document.getElementById("Auth_Phone").innerHTML = 'Phone: ' +auth_phone;
+                                                                                                           document.getElementById("Auth_Email").innerHTML = 'Email: ' + auth_email;
+                                                                                                           document.getElementById("Auth_Balance").innerHTML = 'Balance: '+ auth_balance;
+                                                                                                           document.getElementById("scrittatitolo").style.color = "white";
+                                                                                                           document.getElementById("Auth_Name").style.color = "white";
+                                                                                                           document.getElementById("Auth_Phone").style.color = "white";
+                                                                                                           document.getElementById("Auth_Email").style.color = "white";
+                                                                                                           document.getElementById("Auth_Balance").style.color = "white";
+                                                                                                           document.getElementById("scrittatitolo").innerHTML = "Authenticated Visitor";
+                                                                                                           document.getElementById("contenitore").style.backgroundColor = "green";
+                                                                                                                  }
 							      
 							      
 						      
