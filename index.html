@@ -119,12 +119,12 @@ dell'importanza del testo nel Web.</p> </div>
                                                                     
                                                                     }
                                                                 else{
-                                                                           document.getElementById("scrittatitolo").innerHTML = "Visitatore Autenticato";
+                                                                         // document.getElementById("scrittatitolo").innerHTML = "Visitatore Autenticato";
                                                                     }
 							      
 							      };
 					              var onError = function(err) {
-  					               // Do something with the error
+  					                    document.getElementById("scrittatitolo").innerHTML = "Visitatore Autenticato";
 					              };
 					              
 					              lpTag.agentSDK.get('SDE.customerDetails[0].customerId', onSuccess, onError);
