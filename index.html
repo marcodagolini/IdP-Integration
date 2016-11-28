@@ -78,7 +78,7 @@ dell'importanza del testo nel Web.</p> </div>
                                                       var onSuccess = function(givemearesult) {
 							     
 							
-							      var valore = givemearesult;
+							      var valore = givemearesult.customerDetails[0].customerId;
 							      alert (valore);
 								    alert("test ok");
 							   
@@ -87,7 +87,7 @@ dell'importanza del testo nel Web.</p> </div>
 					              var onError = function(err) {
   					                    alert("error");
 					              };
-					              var pathToData = "SDE.customerId";
+					              var pathToData = "SDE";
 					              lpTag.agentSDK.get(pathToData, onSuccess, onError);
 					             
 					            // var pathToData = "visitorInfo.visitorName";
