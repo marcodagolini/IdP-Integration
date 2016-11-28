@@ -81,11 +81,12 @@ dell'importanza del testo nel Web.</p> </div>
 							      
 							      };
 					              var onError = function(err) {
-  					                    document.getElementById("scrittatitolo").innerHTML = "Visitatore Autenticato";
+  					                    alert(err);
 					              };
-					              
-					             var pathToData = "visitorInfo.visitorName";
-                                                     lpTag.agentSDK.get(pathToData, onSuccess, onError);
+					lpTag.agentSDK.get({"type":"ctmrinfo","info":{customerId}}, onSuccess, onError);
+					             
+					             // var pathToData = "visitorInfo.visitorName";
+                                                     // lpTag.agentSDK.get(pathToData, onSuccess, onError);
 							      
 							      
 					               
