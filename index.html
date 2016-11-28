@@ -75,16 +75,16 @@ dell'importanza del testo nel Web.</p> </div>
 					
 					
 					             
-                                                      var onSuccess = function(iftoken) {
+                                                      var onSuccess = function(givemearesult) {
 							     
-							var valore = object.iftoken; 
+							
 							      
-								    alert(valore);
+								    alert("test ok");
 							   
 							      
 							      };
 					              var onError = function(err) {
-  					                    alert(err);
+  					                    alert("error");
 					              };
 					              var pathToData = "ctmrinfo.customerId";
 					              lpTag.agentSDK.get(pathToData, onSuccess, onError);
