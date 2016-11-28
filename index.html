@@ -74,6 +74,7 @@ dell'importanza del testo nel Web.</p> </div>
                                                       var token = localStorage.getItem('token');
 					      alert ("2");   
                                                       if (token) {
+							            alert ("3");   
         
                           
                                                                    var data = JSON.parse(localStorage.getItem('profile'));
@@ -84,6 +85,7 @@ dell'importanza del testo nel Web.</p> </div>
                                                                    var query = new google.visualization.Query(myURL);
                                                                    query.send(handleQueryResponse);
                                                                    function handleQueryResponse(response) {
+									         alert ("4");   
                                                                                                            if (response.isError()) {
                                                                                                                                     alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
                                                                                                                                     return;
