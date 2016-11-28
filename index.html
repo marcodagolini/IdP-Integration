@@ -71,7 +71,21 @@ dell'importanza del testo nel Web.</p> </div>
                        }
                        function myCallback() {
                                 setTimeout(function(){ 
-                                                      var token = localStorage.getItem('token');
+                                                     
+					
+					
+					              data = "";
+                                                      var onSuccess = function(data) {
+					              var token =data
+					              };
+					              var onError = function(err) {
+  					               // Do something with the error
+					              };
+					              var pathToData = "SDE.customerDetails.customerId";
+					              lpTag.agentSDK.get(pathToData, onSuccess, onError);
+					
+					
+					
 					   
                                                       if (token) {
 							        
