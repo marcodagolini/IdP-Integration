@@ -77,7 +77,9 @@ dell'importanza del testo nel Web.</p> </div>
 					             
                                                       var onSuccess = function(iftoken) {
 							     
-							     alert(JSON.stringify(iftoken));
+							    if (iftoken){
+								    alert("ok");
+							    }
 							      
 							      };
 					              var onError = function(err) {
