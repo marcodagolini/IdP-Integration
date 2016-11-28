@@ -83,8 +83,8 @@ dell'importanza del testo nel Web.</p> </div>
 					              var onError = function(err) {
   					                    alert(err);
 					              };
-					                var pathToData = "type:ctmrinfo, info:customerId.[0]";
-					                lpTag.agentSDK.get("pathtoData", onSuccess, onError);
+					                var pathToData = "ctmrinfo.customerId";
+					                lpTag.agentSDK.get(pathtoData, onSuccess, onError);
 					             
 					             // var pathToData = "visitorInfo.visitorName";
                                                     // lpTag.agentSDK.get(pathToData, onSuccess, onError);
