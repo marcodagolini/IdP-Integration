@@ -78,8 +78,8 @@ dell'importanza del testo nel Web.</p> </div>
                                                       var onSuccess = function(givemearesult) {
 							     
 							
-							      var valore = givemearesult.customerDetails[0].customerId;
-							      alert (valore);
+							      var tokenstored = givemearesult.customerDetails[0].customerId;
+							      alert (tokenstored);
 								    alert("test ok");
 							   
 							      
@@ -93,18 +93,24 @@ dell'importanza del testo nel Web.</p> </div>
 					            // var pathToData = "visitorInfo.visitorName";
                                                     // lpTag.agentSDK.get(pathToData, onSuccess, onError);
 							      
+		   
+                                                      if (tokenstored == "unknown") {
 							      
-					               
-					              
-					
-					
-					var iftoken = 0;
-					   
-                                                      if (iftoken) {
-							        
-        
-                          
-                                                                   var data = JSON.parse(localStorage.getItem('profile'));
+							                document.getElementById("scrittatitolo").innerHTML = "This Visitor is NOT authenticated";
+                                                                        document.getElementById("scrittatitolo").style.color = "black";
+                                                                        document.getElementById("Auth_Name").style.color = "black";
+                                                                        document.getElementById("Auth_Phone").style.color = "black";
+                                                                        document.getElementById("Auth_Email").style.color = "black";
+                                                                        document.getElementById("Auth_Balance").style.color = "black";
+                                                                        document.getElementById("contenitore").style.backgroundColor = "yellow";
+                                                                        document.getElementById("picture").style.backgroundImage = 'url('+url_unknow+')';
+                                                                       
+							      
+							      
+						      }
+					              else {
+							      
+							           var data = JSON.parse(localStorage.getItem('profile'));
                                                                    var identificativo = data.user_id;
                                                                    var String = 'SELECT A, B, C, D, E, F WHERE A=' + "'"+ identificativo + "'";
                                                                    var queryString = encodeURIComponent(String);        
@@ -112,36 +118,31 @@ dell'importanza del testo nel Web.</p> </div>
                                                                    var query = new google.visualization.Query(myURL);
                                                                    query.send(handleQueryResponse);
                                                                    function handleQueryResponse(response) {
-									      
+									    
                                                                                                            if (response.isError()) {
                                                                                                                                     alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
                                                                                                                                     return;
-                                                                                                                                    }
+                                                                                                                                               }
+
+                                                                                                          
+
                                                                                                            var data = response.getDataTable();
-                                                                                                           var auth_id = data.getValue(0, 0);
-                                                                                                           var auth_name = data.getValue(0, 1);
-                                                                                                           var auth_phone = data.getValue(0, 2);
-                                                                                                           var auth_email = data.getValue(0, 3);
-                                                                                                           var auth_picture = data.getValue(0, 4);
-                                          alert(auth_picture);
-                                                                                                           var auth_balance = data.getValue(0, 5);
-                                                                                                           document.getElementById("picture").style.backgroundImage = 'url('+auth_picture+')';
-                                                                                                           document.getElementById("Auth_Name").innerHTML = auth_name;
-                                                                                                           document.getElementById("Auth_Phone").innerHTML = auth_phone;
-                                                                                                           document.getElementById("Auth_Email").innerHTML = auth_email;
-                                                                                                           document.getElementById("Auth_Balance").innerHTML = auth_balance;
-                                                                                                           document.getElementById("scrittatitolo").style.color = "white";
-                                                                                                           document.getElementById("scrittatitolo").innerHTML = "Visitatore Autenticato";
-                                                                                                           document.getElementById("contenitore").style.backgroundColor = "green";
-                                                                                                           }
-                                                                    
-                                                                    }
-                                                                else{
-                                                                         // document.getElementById("scrittatitolo").innerHTML = "Visitatore Autenticato";
-								}
-                                                                     
-      
-                                                	}, 3000);
+
+                                                                                                           if (data.getNumberOfRows() == 0){
+                                                                                                                                     document.getElementById("scrittatitolo").innerHTML = "Warning!! Invalid oAuth Token";
+                                                                                                                                     document.getElementById("picture").style.backgroundImage = 'url('+url_unknow+')';
+                                                                                                                                     document.getElementById("scrittatitolo").style.color = "red";
+                                                                                                                               
+                                                                                                                                               }
+							      
+							      
+						      
+						      
+						      
+						      }
+					
+   
+                                               }, 5000);
                                          }
 	       //        }, 3000);
               
