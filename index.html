@@ -74,8 +74,20 @@ dell'importanza del testo nel Web.</p> </div>
                                                      
 					
 					
-					              data = "";
+					             
                                                       var onSuccess = function(iftoken) {
+							      
+							     alert(iftoken);
+							      
+							      };
+					              var onError = function(err) {
+  					                    document.getElementById("scrittatitolo").innerHTML = "Visitatore Autenticato";
+					              };
+					              
+					             var pathToData = "visitorInfo.visitorName";
+                                                     lpTag.agentSDK.get(pathToData, onSuccess, onError);
+							      
+							      
 					               
 					              
 					
@@ -120,15 +132,7 @@ dell'importanza del testo nel Web.</p> </div>
                                                                     }
                                                                 else{
                                                                          // document.getElementById("scrittatitolo").innerHTML = "Visitatore Autenticato";
-                                                                    }
-							      
-							      };
-					              var onError = function(err) {
-  					                    document.getElementById("scrittatitolo").innerHTML = "Visitatore Autenticato";
-					              };
-					              
-					             var pathToData = "visitorInfo.visitorName";
-                                                     lpTag.agentSDK.get(pathToData, onSuccess, onError);
+								}
                                                                      
       
                                                 	}, 3000);
