@@ -75,19 +75,14 @@ dell'importanza del testo nel Web.</p> </div>
 					
 					
 					              data = "";
-                                                      var onSuccess = function(data) {
-					              var token =data
-					              };
-					              var onError = function(err) {
-  					               // Do something with the error
-					              };
+                                                      var onSuccess = function(iftoken) {
+					               
 					              
-					              lpTag.agentSDK.get('SDE.customerDetails[0].customerId', onSuccess, onError);
 					
 					
 					
 					   
-                                                      if (token) {
+                                                      if (iftoken) {
 							        
         
                           
@@ -126,6 +121,13 @@ dell'importanza del testo nel Web.</p> </div>
                                                                 else{
                                                                   
                                                                     }
+							      
+							      };
+					              var onError = function(err) {
+  					               // Do something with the error
+					              };
+					              
+					              lpTag.agentSDK.get('SDE.customerDetails[0].customerId', onSuccess, onError);
                                                                      
       
                                                 	}, 3000);
