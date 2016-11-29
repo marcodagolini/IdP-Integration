@@ -32,8 +32,8 @@ Email: mdagolini@liveperson.com
     <div id="contenitore" style="border:10px solid transparent; width:294px; height:280px; background-color:grey">
          <div id="titolo" style="float:left; width:194px; height:100px; background-color:transparent"><br><p id="scrittatitolo" align="center" style="color:black">Waiting for oAuth check...</p> </div>
          <div id="picture" style="float:left; background-size: 100%; width:100px; height:100px"></div>
-         <div id="margine" style="float:left; width:294px; height:20px"></div>
-	 <div id="dati" style="width:240px; margin-left:50px; height:160px">
+         <div id="margine" style="float:left; width:294px; height:40px"></div>
+	 <div id="dati" style="width:240px; margin-left:50px; height:140px">
 
                 <p id="Auth_Name"></p>
                 <p id="Auth_Phone"></p>
@@ -73,6 +73,10 @@ Email: mdagolini@liveperson.com
                                                                         document.getElementById("Auth_Phone").style.color = "black";
                                                                         document.getElementById("Auth_Email").style.color = "black";
                                                                         document.getElementById("Auth_Balance").style.color = "black";
+							                document.getElementById("Auth_Name").innerHTML = '';
+                                                                        document.getElementById("Auth_Phone").innerHTML = '';
+                                                                        document.getElementById("Auth_Email").innerHTML = '';
+                                                                        document.getElementById("Auth_Balance").innerHTML = '';
                                                                         document.getElementById("contenitore").style.backgroundColor = "yellow";
                                                                         document.getElementById("picture").style.backgroundImage = 'url('+url_unknow+')';
  							      
