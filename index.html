@@ -102,7 +102,15 @@ Email: mdagolini@liveperson.com
                                                                                                                                      document.getElementById("scrittatitolo").innerHTML = "Warning!! Invalid oAuth Token";
                                                                                                                                      document.getElementById("picture").style.backgroundImage = 'url('+url_unknow+')';
                                                                                                                                      document.getElementById("scrittatitolo").style.color = "red";
-                                                                                                                               
+														                     document.getElementById("Auth_Name").innerHTML = 'Name: ??';
+                                                                                                           	                     document.getElementById("Auth_Phone").innerHTML = 'Phone: ??';
+                                                                                                          	                     document.getElementById("Auth_Email").innerHTML = 'Email: ??';
+                                                                                                          	                     document.getElementById("Auth_Balance").innerHTML = 'Balance: ??';
+														                     document.getElementById("Auth_Name").style.color = "red";
+                                                                                                          	                     document.getElementById("Auth_Phone").style.color = "red";
+                                                                                                          	                     document.getElementById("Auth_Email").style.color = "red";
+                                                                                                          	                     document.getElementById("Auth_Balance").style.color = "red";
+                                                                                                                                     document.getElementById("contenitore").style.backgroundColor = "white";
                                                                                                                                                }
 									                                   else{                                                                                                                
                                                                                                            var auth_id = data.getValue(0, 0);
